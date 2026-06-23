@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/home_screen.dart';
+import 'screens/add_account/add_account_hub_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +34,7 @@ class SpendlyApp extends StatelessWidget {
         textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme),
         fontFamily: GoogleFonts.inter().fontFamily,
       ),
-      home: const HomeScreen(),
+      home: const AddAccountHubScreen(), // TODO: revert to HomeScreen()
     );
   }
 }
