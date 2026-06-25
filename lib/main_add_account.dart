@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'screens/add_account_flow_screen.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
+    ),
+  );
+  runApp(const AddAccountPreviewApp());
+}
+
+class AddAccountPreviewApp extends StatelessWidget {
+  const AddAccountPreviewApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'UX Pilot Finance',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1FAF8F),
+          brightness: Brightness.light,
+        ),
+        scaffoldBackgroundColor: const Color(0xFFF6F8F7),
+        textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme),
+        fontFamily: GoogleFonts.inter().fontFamily,
+      ),
+      home: const AddAccountFlowScreen(),
+    );
+  }
+}
